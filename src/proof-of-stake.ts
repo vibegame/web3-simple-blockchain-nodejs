@@ -85,6 +85,9 @@ class Blockchain {
   addBlock(data: string): void {
     const prevBlock = this.getLastBlock();
     const block = new Block(data, prevBlock.hash, this.chooseValidator());
+
+    console.log(block);
+
     this.chain.push(block);
   }
 
@@ -140,7 +143,9 @@ class Block {
   }
 }
 
-const blockchain = new Blockchain();
-blockchain.addBlock("First block");
-blockchain.addBlock("Second block");
-blockchain.addBlock("Third block");
+export const initializeBlockchain = () => {
+  const blockchain = new Blockchain();
+  blockchain.addBlock("First block");
+  blockchain.addBlock("Second block");
+  blockchain.addBlock("Third block");
+};
