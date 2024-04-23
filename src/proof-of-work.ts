@@ -81,9 +81,9 @@ class Block {
   }
 }
 
-const blockchain = new Blockchain();
-blockchain.addBlock("First block");
-blockchain.addBlock("Second block");
-blockchain.addBlock("Third block");
-
-console.log(blockchain.checkValid());
+export const initializeBlockchain = () => {
+  const blockchain = new Blockchain();
+  blockchain.addBlock("First block");
+  blockchain.addBlock("Second block");
+  blockchain.addBlock("Third block");
+};
